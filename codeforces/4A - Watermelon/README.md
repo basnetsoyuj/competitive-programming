@@ -1,4 +1,4 @@
-## A. Way Too Long Words
+## A. Watermelon
 
 * Time limit per test: 1 second
 * Memory limit per test: 64 megabytes
