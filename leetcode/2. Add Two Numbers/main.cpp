@@ -76,7 +76,7 @@ public:
 };
 
 // -------------------------------------------------------------//
-// --------------To Run Leetcode Solution in Any Machine--------//
+// -----------To Run Leetcode Solution in Any Machine-----------//
 // -------------------------------------------------------------//
 ListNode *setup_linked_list(int arr[], int size)
 {
