@@ -5,12 +5,12 @@ using namespace std;
 class Solution
 {
 public:
-    int removeDuplicates(vector<int> &nums)
+    int removeElement(vector<int> &nums, int val)
     {
-        int counter(0), last_seen(-101);
+        int counter(0);
         for (int i = 0; i < nums.size(); i++)
-            if (last_seen != nums[i])
-                nums[counter++] = (last_seen = nums[i]);
+            if (nums[i] != val)
+                nums[counter++] = nums[i];
         return counter;
     }
 };
