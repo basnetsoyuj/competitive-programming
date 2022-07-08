@@ -1,4 +1,4 @@
-## 59. Spiral Matrix
+## 54. Spiral Matrix
 
 `Medium`
 
