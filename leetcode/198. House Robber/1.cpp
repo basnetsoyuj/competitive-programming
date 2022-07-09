@@ -3,22 +3,27 @@
 
 using namespace std;
 
-// iterative and 2 variable solution
+// recursive and memoized solution
 class Solution
 {
 public:
     int rob(vector<int> &nums)
     {
-        int f1 = 0, f2 = nums[0], temp;
+        int M[SIZE];
+        for (int i = 0; i < SIZE; i++)
+            M[i] = -1;
 
-        for (int i = 1; i < nums.size(); i++)
-        {
-            temp = f2;
-            f2 = max(f2, f1 + nums[i]);
-            f1 = temp;
-        }
+        return rob(nums, 0, M);
+    }
 
-        return f2;
+    int rob(vector<int> &nums, int i, int M[])
+    {
+        if (i >= nums.size())
+            return 0;
+
+        if (M[i] == -1)
+            M[i] = max(nums[i] + rob(nums, i + 2, M), rob(nums, i + 1, M));
+        return M[i];
     }
 };
 

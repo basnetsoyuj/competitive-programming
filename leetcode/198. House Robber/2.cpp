@@ -1,24 +1,22 @@
 #include <bits/stdc++.h>
-#define SIZE 100
 
 using namespace std;
 
-// iterative and 2 variable solution
+// iterative and memoized solution
 class Solution
 {
 public:
     int rob(vector<int> &nums)
     {
-        int f1 = 0, f2 = nums[0], temp;
+        int M[101];
+
+        M[0] = 0;
+        M[1] = nums[0];
 
         for (int i = 1; i < nums.size(); i++)
-        {
-            temp = f2;
-            f2 = max(f2, f1 + nums[i]);
-            f1 = temp;
-        }
+            M[i + 1] = max(M[i], M[i - 1] + nums[i]);
 
-        return f2;
+        return M[nums.size()];
     }
 };
 
