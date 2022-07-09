@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define SIZE 100
 
 using namespace std;
 
@@ -7,8 +8,8 @@ class Solution
 public:
     int rob(vector<int> &nums)
     {
-        int M[nums.size()];
-        for (int i = 0; i < nums.size(); i++)
+        int M[SIZE];
+        for (int i = 0; i < SIZE; i++)
             M[i] = -1;
 
         return rob(nums, 0, M);
