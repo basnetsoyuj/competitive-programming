@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#define SIZE 100
 
 using namespace std;
 
