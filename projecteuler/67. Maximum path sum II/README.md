@@ -1,5 +1,7 @@
 ## 67. Maximum path sum II
 
+`Difficulty: 5%`
+
 [https://projecteuler.net/problem=67](https://projecteuler.net/problem=67)
 
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
