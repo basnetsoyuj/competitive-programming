@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// check 1.cpp to see why a simpler iterative solution fails
 class Solution
 {
 public:
