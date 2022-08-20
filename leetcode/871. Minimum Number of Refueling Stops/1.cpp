@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// O(N^2) time, O(N) space
 class Solution
 {
 public:
