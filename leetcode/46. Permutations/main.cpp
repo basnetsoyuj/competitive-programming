@@ -8,32 +8,21 @@ public:
     vector<vector<int>> permute(vector<int> &nums)
     {
         vector<vector<int>> ans;
-        vector<int> subset;
-        bool chosen[21] = {0}; // -10 <= nums[i] <= 10
-
-        recurse(subset, nums, chosen, ans);
+        recurse(nums, ans, 0);
         return ans;
     }
 
-    void recurse(vector<int> &subset, vector<int> &nums, bool chosen[], vector<vector<int>> &ans)
+    void recurse(vector<int> &nums, vector<vector<int>> &ans, int x)
     {
-        if (subset.size() == nums.size())
-            ans.push_back(subset);
+        if (x == nums.size())
+            ans.push_back(nums);
         else
-        {
-            for (int n : nums)
+            for (int i = x; i < nums.size(); i++)
             {
-                // offset by 10 because of -10 <= nums[i] <= 10
-                if (chosen[n + 10])
-                    continue;
-
-                chosen[n + 10] = true;
-                subset.push_back(n);
-                recurse(subset, nums, chosen, ans);
-                chosen[n + 10] = false;
-                subset.pop_back();
+                swap(nums[i], nums[x]);
+                recurse(nums, ans, x + 1);
+                swap(nums[i], nums[x]);
             }
-        }
     }
 };
 
