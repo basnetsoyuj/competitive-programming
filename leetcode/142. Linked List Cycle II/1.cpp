@@ -2,7 +2,9 @@
 
 using namespace std;
 
-// Definition for singly-linked list.
+/**
+ * Definition for singly-linked list.
+ **/
 
 struct ListNode
 {
@@ -11,40 +13,23 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-// O(n) time, O(1) space
-// Floyd's cycle detection algorithm
 class Solution
 {
 public:
     ListNode *detectCycle(ListNode *head)
     {
-        ListNode *fast = head;
-        ListNode *slow = head;
+        unordered_set<ListNode *> set;
 
-        while (fast && fast->next)
+        // keep inserting to set until its found again
+        // when found again, return its pointer
+        while (head != NULL)
         {
-            // move fast pointer by 2 & slow pointer by 1
-            slow = slow->next;
-            fast = fast->next->next;
-
-            // if they meet, then there is a cycle
-            if (fast == slow)
-            {
-                // reset fast to head and move both pointers by 1 in each step
-                fast = head;
-
-                // where they meet is the start of the cycle
-                while (fast != slow)
-                {
-                    fast = fast->next;
-                    slow = slow->next;
-                }
-
-                return fast;
-            }
+            set.insert(head);
+            head = head->next;
+            if (set.find(head) != set.end())
+                return head;
         }
 
-        // if fast reaches NULL, then there is no cycle
         return NULL;
     }
 };
