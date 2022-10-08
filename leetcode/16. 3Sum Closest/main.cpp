@@ -53,6 +53,8 @@ public:
 // -------------------------------------------------------------//
 int main()
 {
-    vector<int>
-        Solution solver;
+    vector<int> nums = {-1, 2, 1, -4};
+    Solution solver;
+
+    cout << solver.threeSumClosest(nums, 1) << endl;
 }
