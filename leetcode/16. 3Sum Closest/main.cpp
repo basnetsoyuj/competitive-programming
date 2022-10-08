@@ -32,20 +32,6 @@ public:
 
         return best;
     }
-
-    void increment(vector<int> &nums, int &n)
-    {
-        do
-            n++;
-        while (n < nums.size() && nums[n] == nums[n - 1]);
-    }
-
-    void decrement(vector<int> &nums, int &n)
-    {
-        do
-            n--;
-        while (n >= 0 && nums[n] == nums[n + 1]);
-    }
 };
 
 // -------------------------------------------------------------//
