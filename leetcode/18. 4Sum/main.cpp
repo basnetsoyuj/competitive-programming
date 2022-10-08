@@ -13,7 +13,7 @@ public:
         vector<vector<int>> ans;
         sort(nums.begin(), nums.end());
 
-        for (int i = 0; i < nums.size(); increment(nums, i))
+        for (int i = 0; i < nums.size() - 3; increment(nums, i))
         {
             for (int j = i + 1; j < nums.size() - 2; increment(nums, j))
             {
