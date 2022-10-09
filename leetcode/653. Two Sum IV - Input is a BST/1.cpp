@@ -19,8 +19,11 @@ public:
     bool findTarget(TreeNode *root, int k)
     {
         vector<int> v;
+
+        // Inorder traversal to get the sorted array
         inorder_fill(root, v);
 
+        // for each element, check if there is a number in the array that is equal to k - element
         for (int i = 0; i < v.size(); i++)
             if (binary_search(v, 0, i - 1, k - v[i]) != -1 || binary_search(v, i + 1, v.size() - 1, k - v[i]) != -1)
                 return true;
@@ -28,6 +31,7 @@ public:
         return false;
     }
 
+    // convert BST to sorted vector
     void inorder_fill(TreeNode *root, vector<int> &v)
     {
         if (root->left)
@@ -39,6 +43,7 @@ public:
             inorder_fill(root->right, v);
     }
 
+    // function to search for a value in a sorted vector
     int binary_search(vector<int> &v, int l, int r, int val)
     {
         int m;
@@ -56,11 +61,3 @@ public:
         return -1;
     }
 };
-
-// -------------------------------------------------------------//
-// ---------------------To run the solution---------------------//
-// -------------------------------------------------------------//
-int main()
-{
-    Solution solver;
-}
