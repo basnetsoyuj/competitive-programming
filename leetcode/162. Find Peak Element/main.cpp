@@ -15,7 +15,7 @@ public:
             // if the trend continues forever, the peak is at the end
             if(nums[m] < nums[m + 1])
                 l = m + 1;
-            // otherwise, the peak is in the first half
+            // if the trend breaks, the peak is at the left half
             else
                 r = m;
         }
