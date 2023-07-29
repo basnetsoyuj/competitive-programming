@@ -1,5 +1,5 @@
 
-## 2789. Largest Element in an Array after Merge Operations
+## 2799. Count Complete Subarrays in an Array
 
 `Medium`
 
